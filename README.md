@@ -5,14 +5,17 @@ In this example, I'm going to create a RAID 0 with 3 drives, populate it with da
 
 ### Create Raid
 Type: RAID0 (level=0)
+
 `mdadm --create /dev/md0 --verbose --level=0 --raid-devices=3 --chunk=256 /dev/sda /dev/sdb /dev/sdc`
 
 ### Formate to EXT4
 `mkfs.ext4 /dev/md0`
 
 ### Mount MD0 and copy data
-1 - `mount /dev/md0 /tmp/data`  ; cp /xxx / opt/raid/ ; umount /opt/raid
+1 - `mount /dev/md0 /tmp/data`
+
 2 - Copy eny files (videos, music ..etc)
+
 3 - `umount /opt/raid`
 
 ### See if you have information
